@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="StoryApp - Berbagi cerita di komunitas Dicoding">
+  <meta name="theme-color" content="#121212">
+  <title>StoryApp</title>
+
+  <!-- Favicon and Manifest -->
+  <link rel="icon" href="/note.png" type="image/x-icon">
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Leaflet and MarkerCluster CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css">
+
+  <!-- App Styles -->
+  <link rel="stylesheet" href="/src/styles/styles.css">
+  <link rel="stylesheet" href="/src/styles/responsive.css">
+</head>
+<body class="dark">
+  <!-- Skip link hidden for accessibility but not visible -->
+  <a href="#main-content" class="skip-link" tabindex="-1" aria-hidden="true">Langsung ke konten</a>
+
+  <!-- Sidebar and Header will be injected here -->
+  <div id="navbar-container"></div>
+
+  <main id="main-content" tabindex="-1">
+    <div id="content"></div>
+  </main>
+
+  <div id="footer-container"></div>
+  <app-loader></app-loader>
+
+  <!-- PWA Install Banner (auto-hide after a few seconds via JS) -->
+  <div id="pwa-install-banner" role="dialog" aria-live="polite" style="display:none;">
+    <span class="banner-icon"><i class="fas fa-download"></i></span>
+    <div class="banner-content">
+      <strong>Pasang StoryApp di perangkat Anda!</strong>
+      <div style="font-size:0.95em;opacity:0.9;">Akses lebih cepat dan offline langsung dari homescreen.</div>
+    </div>
+    <div class="banner-actions">
+      <button id="install-pwa" class="btn">Pasang</button>
+      <button id="close-banner" class="close-btn" aria-label="Tutup">&times;</button>
+    </div>
+  </div>
+
+  <!-- Offline badge (auto-hide/show via JS/CSS) -->
+  <span class="offline-badge" style="display:none;">Offline Mode</span>
+
+  <!-- Main App Entry -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+  <script type="module" src="/src/app.js"></script>
+</body>
+</html>

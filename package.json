@@ -1,0 +1,24 @@
+{
+  "name": "stroy-app",
+  "version": "1.0.0",
+  "description": "Aplikasi berbagi cerita untuk komunitas Dicoding",
+  "main": "app.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "dicoding",
+    "story",
+    "spa"
+  ],
+  "author": "Naufal Arsyaputra Pradana",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^4.4.11"
+  },
+  "dependencies": {
+    "sweetalert2": "^11.22.0"
+  }
+}

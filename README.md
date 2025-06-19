@@ -2,7 +2,7 @@
 
 **Dibuat oleh:** Naufal Arsyaputra Pradana  
 **Cohort ID:** FC007D5Y1312  
-**Deploy:** [https://dicostoryv2.netlify.app](https://dicostoryv2.netlify.app)
+**Deploy:** [https://dicostoryv2.netlify.app](https://arsyastoryapp.netlify.app)
 
 ---
 
@@ -79,32 +79,10 @@ StoryApp adalah aplikasi Progressive Web App (PWA) untuk berbagi cerita, pengala
 
 ---
 
-## 📱 Tampilan Aplikasi
-
-### **Halaman Utama**
-![Home](./src/public/images/Home.png)
-
-### **Detail Cerita**
-![Detail](./src/public/images/Detail.png)
-
-### **Tambah Cerita**
-![AddStory](./src/public/images/AddStory.png)
-
-### **Peta Cerita**
-![Map](./src/public/images/Map.png)
-
-### **Mode Offline**
-![Offline](./src/public/images/Offline.png)
-
-### **PWA Terpasang**
-![PWA](./src/public/images/PWA.png)
-
----
-
 ## 🚀 Deployment
 
 Aplikasi ini di-deploy menggunakan GitHub Pages dan dapat diakses melalui:
-[https://dicostoryv2.netlify.app](https://dicostoryv2.netlify.app)
+[https://dicostoryv2.netlify.app](https://arsyastoryapp.netlify.app)
 
 ---
 

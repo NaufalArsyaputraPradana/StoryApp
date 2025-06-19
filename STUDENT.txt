@@ -1,6 +1,6 @@
 ## Nama : Naufal Arsyaputra Pradana
 ## Cohort ID : FC007D5Y1312
-## Link Deploy : https://dicostoryv2.netlify.app
+## Link Deploy : https://arsyastoryapp.netlify.app/
 
 ## StoryApp - Aplikasi Berbagi Cerita Komunitas
 
@@ -34,7 +34,6 @@ DicoStory adalah Progressive Web App (PWA) untuk berbagi cerita, pengalaman, dan
    - Installable ke homescreen (Android/iOS/desktop)
    - Offline mode otomatis (Service Worker + Workbox)
    - Push notification (notifikasi cerita baru/favorit)
-   - Banner install PWA
 
 6. **UI/UX Modern**
    - Responsive di semua device
@@ -45,8 +44,6 @@ DicoStory adalah Progressive Web App (PWA) untuk berbagi cerita, pengalaman, dan
 7. **Fitur Lain**
    - Pencarian cerita (search bar)
    - Pagination cerita
-   - Error & empty state yang informatif
-   - Loader animasi di setiap proses
 
 ---
 
@@ -64,7 +61,7 @@ DicoStory adalah Progressive Web App (PWA) untuk berbagi cerita, pengalaman, dan
 
 ### 📱 Cara Coba Aplikasi
 
-1. Buka link deploy: https://dicostoryv2.netlify.app
+1. Buka link deploy: https://arsyastoryapp.netlify.app/
 2. Register akun baru atau login
 3. Tambah cerita dengan foto & lokasi
 4. Lihat cerita di halaman utama atau peta

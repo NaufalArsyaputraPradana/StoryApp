@@ -163,6 +163,20 @@ class NotificationHelper {
       NotificationHelper.showToast('Anda perlu login untuk menerima notifikasi', 'warning');
       return;
     }
+
+    // Helper untuk konversi ArrayBuffer ke base64
+    function arrayBufferToBase64(buffer) {
+      // Ubah ke Uint8Array, lalu ke string, lalu ke base64
+      return btoa(String.fromCharCode.apply(null, new Uint8Array(buffer)));
+    }
+
+    const p256dh = subscription.getKey('p256dh')
+      ? arrayBufferToBase64(subscription.getKey('p256dh'))
+      : '';
+    const auth = subscription.getKey('auth')
+      ? arrayBufferToBase64(subscription.getKey('auth'))
+      : '';
+
     try {
       const response = await fetch('https://story-api.dicoding.dev/v1/notifications/subscribe', {
         method: 'POST',
@@ -173,8 +187,8 @@ class NotificationHelper {
         body: JSON.stringify({
           endpoint: subscription.endpoint,
           keys: {
-            p256dh: subscription.getKey('p256dh'),
-            auth: subscription.getKey('auth'),
+            p256dh,
+            auth,
           },
         }),
       });

@@ -155,9 +155,24 @@ class NotificationHelper {
   }
 
   static async _sendSubscriptionToServer(subscription) {
-    const token = localStorage.getItem('token');
+    // Ambil token dari localStorage (token atau userData)
+    let token = localStorage.getItem('token');
+    if (!token) {
+      // Cek juga di userData
+      const userData = localStorage.getItem('userData');
+      if (userData) {
+        try {
+          const user = JSON.parse(userData);
+          // Ganti 'accessToken' sesuai struktur userData kamu
+          token = user.token || user.accessToken || user.idToken;
+        } catch (e) {
+          token = null;
+        }
+      }
+    }
     if (!token) {
       console.log('User perlu login untuk menerima notifikasi');
+      NotificationHelper.showToast('Anda perlu login untuk menerima notifikasi', 'warning');
       return;
     }
     try {

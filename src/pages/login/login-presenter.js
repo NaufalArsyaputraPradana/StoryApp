@@ -15,7 +15,11 @@ class LoginPresenter {
       if (password.length < 8) throw new Error('Password minimal 8 karakter');
 
       const loginResult = await this._model.login(email, password);
-      AuthHelper.setUserData(loginResult);
+      // Pastikan token dari backend disimpan ke field 'token'
+      AuthHelper.setUserData({
+        ...loginResult,
+        token: loginResult.token || loginResult.accessToken || loginResult.idToken
+      });
 
       this._view.showAlert('Login berhasil! Mengalihkan...', 'success');
       setTimeout(() => {

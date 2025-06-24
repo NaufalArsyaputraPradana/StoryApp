@@ -1,3 +1,5 @@
+import { AuthHelper } from '../utils/auth-helper.js';
+
 class AuthModel {
   constructor() {
     this._baseUrl = 'https://story-api.dicoding.dev/v1';
@@ -35,7 +37,7 @@ class AuthModel {
 
   async subscribeNotification(subscription) {
     try {
-      const token = localStorage.getItem('token');
+      const token = AuthHelper.getToken();
       if (!token) throw new Error('Anda belum login');
       const response = await fetch(`${this._baseUrl}/notifications/subscribe`, {
         method: 'POST',
@@ -55,7 +57,7 @@ class AuthModel {
 
   async unsubscribeNotification(endpoint) {
     try {
-      const token = localStorage.getItem('token');
+      const token = AuthHelper.getToken();
       if (!token) throw new Error('Anda belum login');
       const response = await fetch(`${this._baseUrl}/notifications/subscribe`, {
         method: 'DELETE',

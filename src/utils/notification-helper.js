@@ -1,3 +1,5 @@
+import { AuthHelper } from './auth-helper.js';
+
 class NotificationHelper {
   /**
    * Show a native notification via Service Worker.
@@ -155,18 +157,7 @@ class NotificationHelper {
   }
 
   static async _sendSubscriptionToServer(subscription) {
-    // Ambil token dari userData (karena key 'token' tidak ada di localStorage)
-    let token = null;
-    const userData = localStorage.getItem('userData');
-    if (userData) {
-      try {
-        const user = JSON.parse(userData);
-        // Pastikan field ini sesuai dengan struktur userData kamu
-        token = user.accessToken || user.token || user.idToken;
-      } catch (e) {
-        token = null;
-      }
-    }
+    const token = AuthHelper.getToken();
     if (!token) {
       console.log('User perlu login untuk menerima notifikasi');
       NotificationHelper.showToast('Anda perlu login untuk menerima notifikasi', 'warning');

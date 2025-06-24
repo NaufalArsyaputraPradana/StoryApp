@@ -4,13 +4,19 @@ export class AuthHelper {
     return userData ? JSON.parse(userData) : null;
   }
 
-  static setUserData(userData) {
-    localStorage.setItem('userData', JSON.stringify(userData));
+  static getToken() {
+    const userData = localStorage.getItem('userData');
+    if (!userData) return null;
+    try {
+      const user = JSON.parse(userData);
+      return user.token || user.accessToken || user.idToken || null;
+    } catch {
+      return null;
+    }
   }
 
-  static getToken() {
-    const userData = this.getUserData();
-    return userData ? userData.token : null;
+  static setUserData(data) {
+    localStorage.setItem('userData', JSON.stringify(data));
   }
 
   static getUserId() {

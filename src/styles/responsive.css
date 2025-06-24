@@ -81,6 +81,13 @@
   }
 }
 
+@media (max-width: 600px) {
+  #pwa-install-banner .btn {
+    padding: 0.9rem 1.2rem;
+    font-size: 1rem;
+  }
+}
+
 @media (min-width: 768px) {
   .coordinator-grid.masonry {
     grid-auto-rows: auto; 

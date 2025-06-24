@@ -70,4 +70,15 @@ export function bindSidebarEvents() {
       openBtn.classList.remove('hide');
     };
   });
+
+  // Tambahkan event listener untuk tombol logout di sidebar
+  const logoutBtn = document.getElementById('logout-menu');
+  if (logoutBtn) {
+    logoutBtn.onclick = (e) => {
+      e.preventDefault();
+      if (window.app && typeof window.app._handleLogout === 'function') {
+        window.app._handleLogout();
+      }
+    };
+  }
 }

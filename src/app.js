@@ -87,9 +87,9 @@ class App {
     const loginMenuItem = document.getElementById('login-menu');
     const registerMenuItem = document.getElementById('register-menu');
     const logoutMenuItem = document.getElementById('logout-menu');
-    // Sidebar menu items may not exist if not rendered yet
+    // Jangan tampilkan warning jika menu belum ada, cukup return
     if (!loginMenuItem || !registerMenuItem || !logoutMenuItem) {
-      console.warn('Menu items not found');
+      // return tanpa warning, atau log hanya jika mode dev
       return;
     }
 

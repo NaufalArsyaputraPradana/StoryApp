@@ -15,8 +15,13 @@ class PwaInstaller {
       const installButton = document.getElementById('install-pwa');
       const closeBannerButton = document.getElementById('close-banner');
       if (installButton) {
-        installButton.addEventListener('click', function() {
-          window.location.href = 'https://dicostoryv2.netlify.app';
+        installButton.addEventListener('click', async () => {
+          if (this.deferredPrompt) {
+            this.deferredPrompt.prompt();
+            const choiceResult = await this.deferredPrompt.userChoice;
+            this.deferredPrompt = null;
+            this._hideInstallBanner();
+          }
         });
       }
       if (closeBannerButton) {

@@ -74,7 +74,6 @@ class HomePage {
 
   async afterRender() {
     this._renderSidebarAndFooter();
-    // Pastikan sidebar sudah dirender sebelum cek auth status
     if (window.app && typeof window.app._checkAuthStatus === 'function') {
       window.app._checkAuthStatus();
     }

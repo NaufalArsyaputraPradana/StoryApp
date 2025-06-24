@@ -89,7 +89,6 @@ class App {
     const logoutMenuItem = document.getElementById('logout-menu');
     // Jangan tampilkan warning jika menu belum ada, cukup return
     if (!loginMenuItem || !registerMenuItem || !logoutMenuItem) {
-      // return tanpa warning, atau log hanya jika mode dev
       return;
     }
 

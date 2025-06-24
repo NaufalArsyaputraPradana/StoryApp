@@ -155,7 +155,20 @@ class NotificationHelper {
   }
 
   static async _sendSubscriptionToServer(subscription) {
-    const token = localStorage.getItem('token');
+    // Ambil token sesuai skema penyimpanan login
+    let token = localStorage.getItem('token');
+    if (!token) {
+      // Misal data login disimpan di localStorage dengan key 'user'
+      const userData = localStorage.getItem('user');
+      if (userData) {
+        try {
+          const user = JSON.parse(userData);
+          token = user.token || user.accessToken; // sesuaikan dengan struktur data kamu
+        } catch (e) {
+          token = null;
+        }
+      }
+    }
     if (!token) {
       console.log('User perlu login untuk menerima notifikasi');
       return;
